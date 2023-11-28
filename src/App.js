@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
+import Widgets from "./components/Widgets";
+import "./App.css";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // BEM
+    <div className="app">
+      <Grid container>
+        <Grid item xs={3}>
+          <Sidebar />
+        </Grid>
+        <Grid item xs={4}>
+          <Feed />
+        </Grid>
+        <Grid item xs={5}>
+          <Widgets />
+        </Grid>
+      </Grid>
     </div>
   );
 }
