@@ -2,9 +2,26 @@ import React, { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTweetsAsync } from '../features/twitterSlice';
 
 function Feed() {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+  const { tweets, loading, error } = useSelector((state) => state.twitter);
+
+  console.log(tweets);
+
+  useEffect(() => {
+    dispatch(fetchTweetsAsync("933354946111705097"));
+  }, [dispatch]);
+
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
+
+  // if (error) {
+  //   return <p>Error: {error}</p>;
+  // }
 
 
   return (
