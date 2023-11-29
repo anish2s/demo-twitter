@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.twitter.com/2/tweets';
 const twitterService = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAABgRrQEAAAAAmUSk8HFZky2Qpf1pSoj1TKa2nIE%3DsuX9H4N5egBsGIw8ebeQgmj6CuhQcNbm9Fh4qNXCVxNBdnTVwS`,
+    Authorization: `Bearer ` + process.env.TWITTER_BEARER_TOKEN,
   },
 });
 
