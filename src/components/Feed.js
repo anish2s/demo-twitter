@@ -2,17 +2,10 @@ import React, { useState, useEffect } from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-import db from "./firebases";
-import FlipMove from "react-flip-move";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
 
-  // useEffect(() => {
-  //   db.collection("posts").onSnapshot((snapshot) =>
-  //     setPosts(snapshot.docs.map((doc) => doc.data()))
-  //   );
-  // }, []);
 
   return (
     <div className="feed">
@@ -20,23 +13,28 @@ function Feed() {
         <h2>Home</h2>
       </div>
 
-      <TweetBox />
+      <TweetBox />  
 
-      {/* <FlipMove>
-        {posts.map((post) => (
-          <Post
-            key={post.text}
-            displayName={post.displayName}
-            username={post.username}
-            verified={post.verified}
-            text={post.text}
-            avatar={post.avatar}
-            image={post.image}
-          />
-        ))}
-      </FlipMove> */}
+      <Post
+        // displayName, userName, verified, text, image, avatar
+        displayName="Anish Kumar"
+        userName="anish"
+        verified={true}
+        text=" Twitter has a tool which creates embedded widgets, however they don't work out of the box in JSX (React)."
+        avatar="https://source.unsplash.com/3tYZjGSBwbk"
+        image="https://giphy.com/gifs/kim-novak-tXL4FHPSnVJ0A"
+      />
+
+      <Post
+        // displayName, userName, verified, text, image, avatar
+        displayName="Anish Kumar"
+        userName="anish"
+        verified={true}
+        text="let the trolling begin!"
+        avatar="https://source.unsplash.com/3tYZjGSBwbk"
+        image="https://media.giphy.com/media/Ze4BXdrjDjygM9Piq0/giphy.gif"
+      />
     </div>
   );
 }
-
 export default Feed;

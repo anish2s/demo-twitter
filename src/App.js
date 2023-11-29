@@ -13,10 +13,10 @@ function App() {
         <Grid item xs={3}>
           <Sidebar />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           <Feed />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Widgets />
         </Grid>
       </Grid>
